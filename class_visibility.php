@@ -8,7 +8,7 @@ class Student {
     public $country = 'None';
 
     protected $registrationId;
-    private $tution = 0.0;
+    private $tution = 500;
 
     public function hello_world() {
         return "Hello World!";
@@ -24,6 +24,10 @@ class Student {
 
     public function full_name() {
         return $this->first_name .' '. $this->last_name;
+    }
+
+    public function tution_fmt() {
+        return "$". $this->tution;
     }
 }
 
@@ -42,5 +46,7 @@ echo $student1->hello_world() .'<br \>';
 echo $student1->hello_parent() .'<br \>';
 // echo $student1->hello_Me() .'<br \>';
 // echo $student1->registrationId;
-// echo $student1->tution;
+$student1->tution = 1000;
+echo $student1->tution .'<br \>';
+echo $student1->tution_fmt() .'<br \>';
 ?>
