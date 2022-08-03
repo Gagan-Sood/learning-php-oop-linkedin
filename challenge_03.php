@@ -1,7 +1,4 @@
 <?php
-
-use Bicycle as GlobalBicycle;
-
 class Bicycle {
     public $brand;
     public $model;
