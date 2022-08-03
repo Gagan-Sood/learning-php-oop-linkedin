@@ -1,5 +1,6 @@
 <?php
 
+use PartTimeStudent as GlobalPartTimeStudent;
 use Student as GlobalStudent;
 
 class Student {
@@ -29,4 +30,23 @@ echo  Student::count().'<br \>';
 Student::addStudent();
 echo  Student::count().'<br \>';
 
+// Static methods and properties are inherited
+class PartTimeStudent extends Student {
+
+}
+
+echo  PartTimeStudent::$grades[0].'<br \>';
+echo  PartTimeStudent::moto().'<br \>';
+
+// Changes are shared too in parent class if property defined as static
+PartTimeStudent::$grades[] = 'Alumni';
+echo implode(', ', Student::$grades).'<br \>';
+
+Student::addStudent();
+Student::addStudent(); 
+Student::addStudent();
+PartTimeStudent::addStudent();
+
+echo PartTimeStudent::count().'<br />';
+echo Student::count().'<br />';
 ?>
