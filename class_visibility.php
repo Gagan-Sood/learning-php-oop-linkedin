@@ -1,7 +1,4 @@
 <?php
-
-use Student as GlobalStudent;
-
 class Student {
     public $first_name;
     public $last_name;
