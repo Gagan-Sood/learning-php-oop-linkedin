@@ -11,6 +11,11 @@ class Sofa {
         $this->seats = $args['seats'] ?? $this->seats;
         $this->arms = $args['arms'] ?? $this->arms;
     }
+
+    public function __destruct()
+    {
+        self::$instanceCount--;
+    }
 }
 
 class Couch extends Sofa {
@@ -26,6 +31,8 @@ echo "Sofa <br/>";
 echo "-seats: " . $sofa->seats . "<br/>";
 echo "-arms: " . $sofa->arms . "<br/><hr/>";
 
+unset($sofa);
+
 $couch = new Couch(['seats' => 3, 'arms' =>1]);
 echo "Couch <br/>";
 echo "-seats: " . $couch->seats . "<br/>";
@@ -36,5 +43,5 @@ echo "Loveseat <br/>";
 echo "-seats: " . $loveseat->seats . "<br/>";
 echo "-arms: " . $loveseat->arms . "<br/><hr/>";
 
-echo "Instance count: ". Sofa::$instanceCount;
+echo "Instance count: ". Sofa::$instanceCount . "<br/>";
 ?>
