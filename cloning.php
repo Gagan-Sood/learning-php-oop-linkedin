@@ -26,4 +26,9 @@ $a->name = 'Tea';
 echo $a->name . "<br/>";
 echo $b->name . "<hr/>";
 
+$c = $b;
+$c->name = "Juice";
+echo $a->name . "<br/>";
+echo $b->name . "<br/>";
+echo $c->name . "<hr/>";
 ?>
